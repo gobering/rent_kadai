@@ -6,6 +6,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @nearest_stations = @property.nearest_stations
   end
 
   def new
@@ -49,7 +50,7 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:name, :price, :address, :age, :remarks, 
-    nearest_stations_attributes: [:route, :station, :minutes_walk, :property_id, :id, :_destroy ],)
+    nearest_stations_attributes: [:id, :route_name, :station_name, :time])
   end
 
 end
