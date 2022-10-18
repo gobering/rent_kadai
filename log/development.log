@@ -1735,3 +1735,33 @@ Processing by PropertiesController#index as HTML
 Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 4821)
 
 
+Started GET "/properties/3/edit" for ::1 at 2022-10-18 17:14:22 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProperty Load (0.9ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/properties_controller.rb:48:in `set_property'
+  Rendering properties/edit.html.erb within layouts/application
+  [1m[36mNearestStation Load (0.4ms)[0m  [1m[34mSELECT "nearest_stations".* FROM "nearest_stations" WHERE "nearest_stations"."property_id" = ?[0m  [["property_id", 3]]
+  ↳ app/views/properties/_form.html.erb:41
+  Rendered properties/_form.html.erb (Duration: 9.4ms | Allocations: 4419)
+  Rendered properties/edit.html.erb within layouts/application (Duration: 10.7ms | Allocations: 4711)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 24.2ms | ActiveRecord: 1.3ms | Allocations: 12711)
+
+
+Started GET "/properties/3/edit" for ::1 at 2022-10-18 17:17:06 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/properties_controller.rb:49:in `set_property'
+  Rendering properties/edit.html.erb within layouts/application
+  [1m[36mNearestStation Load (0.4ms)[0m  [1m[34mSELECT "nearest_stations".* FROM "nearest_stations" WHERE "nearest_stations"."property_id" = ?[0m  [["property_id", 3]]
+  ↳ app/views/properties/_form.html.erb:41
+  Rendered properties/_form.html.erb (Duration: 5.0ms | Allocations: 5228)
+  Rendered properties/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 5374)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 11.2ms | ActiveRecord: 1.2ms | Allocations: 22909)
+
+
