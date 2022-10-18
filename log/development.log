@@ -1765,3 +1765,101 @@ Processing by PropertiesController#edit as HTML
 Completed 200 OK in 29ms (Views: 11.2ms | ActiveRecord: 1.2ms | Allocations: 22909)
 
 
+Started GET "/properties/new" for ::1 at 2022-10-18 17:52:08 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/_form.html.erb (Duration: 4.8ms | Allocations: 2894)
+  Rendered properties/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 7464)
+
+
+Started POST "/properties" for ::1 at 2022-10-18 17:52:19 +0900
+Processing by PropertiesController#create as HTML
+  Parameters: {"authenticity_token"=>"Z8N7fba61HSZZSxEsGo9wW4LCMAZ0cJk+eMXEKusyLCNkFT3krglGcl5Vs3eKWDCKgzFKBML/ZbzgxWuy5Piig==", "property"=>{"name"=>"あ", "price"=>"333", "address"=>"add", "age"=>"22", "remarks"=>"aa", "nearest_stations_attributes"=>{"0"=>{"route_name"=>"", "station_name"=>"", "time"=>""}, "1"=>{"route_name"=>"", "station_name"=>"", "time"=>""}}}, "commit"=>"Create Property"}
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/_form.html.erb (Duration: 8.1ms | Allocations: 3469)
+  Rendered properties/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 11030)
+
+
+Started POST "/properties" for ::1 at 2022-10-18 17:53:29 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"authenticity_token"=>"6mHV/ePF6MDGYN5diBuz5GsAdk07639qEQHrNgOYt0QAMvp3x8cZrZZ8pNTmWO7nLwe7pTExQJgbYemIY6edfg==", "property"=>{"name"=>"s", "price"=>"3", "address"=>"s", "age"=>"2", "remarks"=>"z", "nearest_stations_attributes"=>{"0"=>{"route_name"=>"", "station_name"=>"", "time"=>""}, "1"=>{"route_name"=>"", "station_name"=>"", "time"=>""}}}, "commit"=>"Create Property"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mProperty Create (0.8ms)[0m  [1m[32mINSERT INTO "properties" ("name", "price", "address", "age", "remarks", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "s"], ["price", 3], ["address", "s"], ["age", 2], ["remarks", "z"], ["created_at", "2022-10-18 08:53:29.820672"], ["updated_at", "2022-10-18 08:53:29.820672"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mNearestStation Create (0.3ms)[0m  [1m[32mINSERT INTO "nearest_stations" ("route_name", "station_name", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["route_name", ""], ["station_name", ""], ["property_id", 5], ["created_at", "2022-10-18 08:53:29.823232"], ["updated_at", "2022-10-18 08:53:29.823232"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mNearestStation Create (0.0ms)[0m  [1m[32mINSERT INTO "nearest_stations" ("route_name", "station_name", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["route_name", ""], ["station_name", ""], ["property_id", 5], ["created_at", "2022-10-18 08:53:29.824580"], ["updated_at", "2022-10-18 08:53:29.824580"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+Redirected to http://localhost:3000/properties
+Completed 302 Found in 19ms (ActiveRecord: 2.3ms | Allocations: 18931)
+
+
+Started GET "/properties" for ::1 at 2022-10-18 17:53:29 +0900
+Processing by PropertiesController#index as HTML
+  Rendering properties/index.html.erb within layouts/application
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/properties/index.html.erb:18
+  Rendered properties/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1424)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 5875)
+
+
+Started GET "/properties/new" for ::1 at 2022-10-18 17:53:31 +0900
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/_form.html.erb (Duration: 6.0ms | Allocations: 3043)
+  Rendered properties/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3135)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 7377)
+
+
+Started POST "/properties" for ::1 at 2022-10-18 17:53:47 +0900
+Processing by PropertiesController#create as HTML
+  Parameters: {"authenticity_token"=>"yUr6ORSyE6TpgwwTEkg0G+1bFz8dvqe1kKCYudNCEU4jGdWzMLDiybmfdpp8C2kYqVza1xdkmEeawJoHs307dA==", "property"=>{"name"=>"s", "price"=>"2", "address"=>"d", "age"=>"3", "remarks"=>"a", "nearest_stations_attributes"=>{"0"=>{"route_name"=>"a", "station_name"=>"s", "time"=>"3"}, "1"=>{"route_name"=>"", "station_name"=>"", "time"=>""}}}, "commit"=>"Create Property"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mProperty Create (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("name", "price", "address", "age", "remarks", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "s"], ["price", 2], ["address", "d"], ["age", 3], ["remarks", "a"], ["created_at", "2022-10-18 08:53:47.006102"], ["updated_at", "2022-10-18 08:53:47.006102"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mNearestStation Create (0.4ms)[0m  [1m[32mINSERT INTO "nearest_stations" ("route_name", "station_name", "time", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["route_name", "a"], ["station_name", "s"], ["time", 3], ["property_id", 6], ["created_at", "2022-10-18 08:53:47.011277"], ["updated_at", "2022-10-18 08:53:47.011277"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[36mNearestStation Create (0.1ms)[0m  [1m[32mINSERT INTO "nearest_stations" ("route_name", "station_name", "property_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["route_name", ""], ["station_name", ""], ["property_id", 6], ["created_at", "2022-10-18 08:53:47.025092"], ["updated_at", "2022-10-18 08:53:47.025092"]]
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/properties_controller.rb:23:in `create'
+Redirected to http://localhost:3000/properties
+Completed 302 Found in 24ms (ActiveRecord: 1.9ms | Allocations: 6200)
+
+
+Started GET "/properties" for ::1 at 2022-10-18 17:53:47 +0900
+Processing by PropertiesController#index as HTML
+  Rendering properties/index.html.erb within layouts/application
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT "properties".* FROM "properties"[0m
+  ↳ app/views/properties/index.html.erb:18
+  Rendered properties/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1208)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5063)
+
+
+Started GET "/properties/6/edit" for ::1 at 2022-10-18 17:53:48 +0900
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/properties_controller.rb:49:in `set_property'
+  Rendering properties/edit.html.erb within layouts/application
+  [1m[36mNearestStation Load (0.3ms)[0m  [1m[34mSELECT "nearest_stations".* FROM "nearest_stations" WHERE "nearest_stations"."property_id" = ?[0m  [["property_id", 6]]
+  ↳ app/views/properties/_form.html.erb:41
+  Rendered properties/_form.html.erb (Duration: 8.9ms | Allocations: 4651)
+  Rendered properties/edit.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 0.6ms | Allocations: 9527)
+
+
