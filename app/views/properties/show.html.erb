@@ -25,5 +25,31 @@
   <%= @property.remarks %>
 </p>
 
+<% if @nearest_stations.present? %>
+  <hr>
+  <% @nearest_stations.each_with_index do |nearest_station, i| %>
+    <h4>
+      最寄り駅
+      <%= i + 1 %>
+    </h4>
+    <div class="container">
+      <p>
+        <span class="bold">路線名</span>
+        <%= nearest_station.route_name %>
+      </p>
+      <p>
+        <span class="bold">駅名</span>
+        <%= nearest_station.station_name %>
+      </p>
+      <p>
+        <span class="bold">徒歩分数</span>
+        <%= "#{nearest_station.time}分" %>
+      </p>
+    </div>
+  <% end %>
+<% end %>
+
+
+
 <%= link_to '編集', edit_property_path(@property) %> |
 <%= link_to '戻る', properties_path %>
